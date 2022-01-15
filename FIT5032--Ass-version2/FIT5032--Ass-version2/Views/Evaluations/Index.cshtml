@@ -1,0 +1,34 @@
+﻿@model IEnumerable<FIT5032__Ass_version2.Models.Evaluation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer ratings for us </h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate_num)
+        </th>
+        <th></th>
+    </tr>*@
+
+@foreach (var item in Model) {
+
+<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><font size="8">@Html.DisplayFor(modelItem => item.Rate)</font></p>
+
+<h2>Cumulative number of ratings  </h2>
+
+<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><font size="8">@Html.DisplayFor(modelItem => item.Rate_num)</font></p>
+
+<u><font size="5">@Html.ActionLink("JOIN IN", "Rate", new { id = item.Id })</font></u>
+    
+
+    }
